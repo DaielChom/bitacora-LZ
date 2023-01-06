@@ -101,6 +101,27 @@ El proceso para generar scripts, la creacion de tablas temporales y otros proces
 
               "SELECT table_name, DATA_TYPE, COLUMN_NAME, NULLABLE, DATA_PRECISION, DATA_SCALE, DATA_LENGTH FROM  all_tab_columns WHERE table_name='<table_name>' and owner='<esquema>' " 
 
+2.1 se debe de tener en cuenta que en cada motor cambia el query estos son algunos ejemplos según el motor
+    •	Sybase
+"sp_columns <nombre_tabla>,<esquema>"
+
+•	Mysql
+"SELECT TABLE_NAME, DATA_TYPE, COLUMN_NAME, IS_NULLABLE, NUMERIC_PRECISION, NUMERIC_SCALE, CHARACTER_MAXIMUM_LENGTH  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='<equema>' AND TABLE_NAME='<nombre_tabla>'"
+
+•	Oracle
+"SELECT table_name, DATA_TYPE, COLUMN_NAME, NULLABLE, DATA_PRECISION, DATA_SCALE, DATA_LENGTH FROM  all_tab_columns WHERE table_name='<nombre_tabla>' and owner='<equema>' "
+
+•	Postgresql
+"SELECT table_name, data_type, column_name, is_nullable, numeric_precision, numeric_scale, character_maximum_length FROM information_schema.columns WHERE table_schema = '<equema>' AND table_name   = '<nombre_tabla>'"
+
+•	Db2
+"SELECT table_name, data_type, column_name, is_nullable, numeric_precision, numeric_scale,character_maximum_length FROM sysibm.columns WHERE table_schema IN ('<esquema>') and table_name in ('<nombre_tabla>')"
+
+•	SQLServer
+"sp_columns <nombre_tabla>,<esquema>"
+
+
+
             Para otros tipos de bases de datos verificar el archivo `QUERIES PARA OBTENER DESCRIBE DE LAS TABLAS SEGÚN BASE DE DATOS.doc` en la carpeta de documentacion. El schema, subdominio y el nombre de la tabla debeiran de encontrarse en la Historia de Usuario o en la plantilla de excel descargada. La base de datos temporal se crea en desarrollo. Tener en cuenta que la query que se realiza en el asistente es muy sensible a caracteres espacio antes y despues de la sentencia SQL.
 
         - **Guardar medatada**: El resultado de la query anterior debe ser guardado en un archivo de texto `.txt` sin dejar ningun espacio o salto de linea al final del archivo. El nombre de este archivo debe llevar la convension `<motor_db>_<table_name>.txt`, por ejemplo para una tabla de oracle con nombre **INQUIRT_AUDIT_TABLE**, el nombre del archivo a creado seria: `oracle_INQUIRT_AUDIT_TABLE.txt`. Este archivo debe ser guardado en el mismo servidor donde se encuentra el script `createData.sh` en un directorio temporal. ejemplo `/home/<user_name>/tablas_temporales/`. Este directorio debe estar en el home del desarrollador.
