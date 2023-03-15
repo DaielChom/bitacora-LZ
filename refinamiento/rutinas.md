@@ -11,9 +11,10 @@ Apartir de 2022-11-18 solo se recibiran nuevas rutinas bajo el esquema de calend
 
 - **Leer la historia de usuario:** Se debe leer la HU y los distintos comentarios que haya para obtener el contexto de la misma. Debemos verificar qué informacion nos da el usuario respecto al repositorio y pull-request de la rutina que se trabajar, tambien debemos asegurarnos que la HU cuente con un padre.
 - **logs:** 
- - Cuando se trata de modificaciones grandes o migraciones a nuevo orquestador o nuevo esquema de validacion se necesitan 3 logs. 2 de compilacion y 1 de estabilidad nuevas migraciones.
- - Para modifiaciones pequeñas son dos logs.
- - Para rutinas completamente nuevas se requerien 6 logs. 3 de compilacion y 3 de ejecucion.
+    - Cuando se trata de modificaciones grandes o migraciones a nuevo orquestador o nuevo esquema de validacion se necesitan 3 logs. 2 de compilacion y 1 de estabilidad nuevas migraciones.
+    - Para modifiaciones pequeñas son dos logs.
+    - Para rutinas completamente nuevas se requerien 6 logs. 3 de compilacion y 3 de ejecucion.
+    - Luego de cada modificacion solicitada deben venir logs nuevos en el PR (segun el caso). Logs que esten ya en la rama trunk (repositorio) no son validos.
 - **Verificar el tipo de HU**
 debemos asegurarnos si nuestra HU es una revision, una modificacion o una calendarizacion. Para la calendarizacion debemos asegurarnos que ya se haya trabajado la HU de revision, de lo contrario se etiqueta como `NO se puede trabajar`. Para revisioon o modificacion continuar con lo siquientes pasos.
 - **Identificar datos:**
@@ -22,7 +23,7 @@ debemos asegurarnos si nuestra HU es una revision, una modificacion o una calend
         - Verificar que vaya de master a trunk.
     - **Grupo USD:** verificar grupo USD, hace parte de la documentacion y hace parte del proceso del seguimiento de rutinas, tambien es para saber a que area se pasan las incidencias.
     - **Pipeline validacion** Debemos asegurarnos que el PR ha ejecutado el pipeline de validacion `vitd_validacion_calendarizacion_LZ_CD`
-    - **Revisar el MANIFEST y setup:** En la nueva forma de calendarizacion la info de los archivos MANIFEST y setup.py van en el archivo stup.cfg
+    - **Revisar el MANIFEST y setup.cfg:** Las rutinas que vienen por modelo 2.0 pueden tener mapeados sus archivos en 2 partes: manifest.in (lo que estamos acostumbrados) o en el setup.cfg bajo el parámetro [options.package_data].
     - **Prefijo repositorio:** Se debe validar que el prefijo del repo de cada rutina este entre los sigueitnes. bana-, veg-, vcum-, vedp-, vrgo-, vspc-, vitd-, vsas-, vpyp-, vnc-, vsuf-, veyg-, vmdo-, bani-
 - **Comentar HU:** Se debe dejar un comentario en la HU indicando los hallazgos del refinamiento.
 

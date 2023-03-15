@@ -155,7 +155,8 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
         la idea de ejecutar la rutina es encontrar erores o problemas que se denominana hallazgos, los cuales se reportan al usuario para que los corriga.
         la idea no es botar la pelota con el usuario con cada error que se encuentra, uno mismo podria vcorregir el error para verificar nuevos hallazgos y asi entregar una lista de hallazgos a los usuarios. Se notifica a los usuarios que hagan los cambios ya que los cambios en lasrutinas deben ser por parte de los mismos usuarios, en landingzone no debemos cgenerar ningun tipo de cambio en la rutina que vaya a produccion.
 
-        Nuestra tarea es corroborar al codigo no correguir. Si hay hallazgos y no da tiempo de vovler a probar. la HU no se calendariza, es decir no va a producicon, es decir no se inscribe en mal                    
+        Nuestra tarea es corroborar al codigo no correguir. Si hay hallazgos y no da tiempo de vovler a probar. la HU no se calendariza, es decir no va a producicon, es decir no se inscribe en mal
+        - Fallos: Si falla por algun import puede que el usuario requiera conocer el [repositorio guia](https://dev.azure.com.mcas.ms/GrupoBancolombia/Vicepresidencia%20de%20Innovaci%C3%B3n%20y%20Transformaci%C3%B3n%20Digital/_git/vitd-ejemplo-orquestador2)
 
 
     - **Resume:** Cuando nos aseguramos de que la rutina no tiene hallazgos reejecutamos el stage deploy dev y luego le damos resume al estado Dev validation. Esto sucede asi dado que modificacmos el config.json lo reescribimos a su estado original dandole nuevamnete deploy al primer estado, esto como precaucion de que el config no vaya con la configuracion equivocada a PRD. Luego podemos dar deploy al estado dev validation dado que validamos usando el validador y ejehcutamos la rutina.
@@ -164,7 +165,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 7. **Release: VSTS Pre valdiation:** Simeplemente debemos desplegar. ellos haran varios checqueos.
 8. **Release: Create OC** hablamos encargado de la OC. para indicarle que ya tenemos una rutina hia. le pasamos el release. el certificador cierra el testplan.  Una vez este aprobado debemos veritficar el DoD, el DoD debe tener la Oc asignado de manera correcta y entrar a uno de los estados del release y ver que si se relaciono con el DoD correcto. Hasta la fecha se debe hablar con Luis
 9. **Release: DeployPDN** el certificador manda un correo y en infra ejecutan el despliegue en prd.
-10. **Copy of Execute Auto Inventory Routine Test:**
+10. **Copy of Execute Auto Inventory Routine Test:** Revisar el word [Uso de Autoinventario de rutinas](https://bancolombia-my.sharepoint.com/:w:/r/personal/andorreg_bancolombia_com_co1/Documents/Archivos%20de%20chat%20de%20Microsoft%20Teams/Uso%20de%20Autoinventario%20de%20rutinas.docx?d=wa48f70f231264e2b8094c9ad0a3596f2&csf=1&web=1&e=QCr4zq) para mas detalle
 
   - **Determinar nombre del proceso:** Entrar a DeployUCD para determinar el nombre del proceso con el cual documentaremos la rutina y quedara registrada en PRD y en malla.
 
@@ -179,6 +180,8 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 
 
 11. **Release:user Valdiation.**
+
+    - **Docuemtnar HU:** Poner el nombre del proceso
     
     - **Prueba controlada:** En el asistente en prd ejecutamos el comando en servicios, en ejecutar programa.
     comando: xxxxx
@@ -197,6 +200,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
               $ ps -fea | grep "<zona_resultados>"
 
         **Nota:** Si falla y ya estaba calendarizada hay que crear una Oc para cancelar la ejecucion.
+
 
     
     - **Calendarizar** si la prueba es exitosa insribir en malla. en el excel. 

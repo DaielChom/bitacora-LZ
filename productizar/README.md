@@ -18,6 +18,7 @@ Se contara con una HU de "Despliegue de infraestructura" la cual es la primera q
           $ git checkout -b feature/HU<hu-id>_<hu-name>
 
     - En caso de que sea un API completamente nueva, copiar el directorio xxx cambiandole el nombre por el de la api que vamos a desplegar
+    - agregar la alarma de cloudwach a la dynamo
     - **USAR GENERADOR DE INFRAESTRUCURA.**
     - modicar los archivos de la infrastructura segun sea necesario.
         - modificar las variables en el azure.yaml
@@ -230,9 +231,10 @@ Debemos contar con una HU de creacion de coordinadores para mbientes intermedios
             - crear carpeta
                 
                   $ mkdir -p `/data01/Cloud/TMP_FILES/<ApiName>`
-            - Ejecutar coordinador 
+            - Ejecutar coordinador o coordinador inverso
                   
                   $ cd /opt/gitDevops/ProductizarLaAnalitica/ProductizarPy3 && nohup python3 coordinatorV2.py /opt/gitDevops/ProductizarLaAnalitica/<ApiName>/API/cfg/<coordinador>.json &
+                  $ cd /opt/gitDevops/ProductizarLaAnalitica/InversoPy3/ && nohup python3 inverse_coordinator.py /opt/gitDevops/ProductizarLaAnalitica/<ApiName>/API/cfg/<coordinador>.json &
             
             - Revisar logs. Debemos revisar los logs del coordinador en la ruta `/opt/gitDevops/ProductizarLaAnalitica/<ApiName>/TMP_FILES/logs`
             - Documentar. Cuando haya finalizado debemos documentar en la HU la ejecucion y buen funcionamiento del coordinador. Debemos tambien adjuntar evidencia de AWS.
