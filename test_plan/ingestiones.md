@@ -52,11 +52,12 @@
     - Relacionar la HU como item existente. En `link type` poner `relate`, en `work item` el numero de la `HU` y dar OK.
 	- Asignarnos el test plan.
 - **Checklist:**
-    - Nos dirigimos a checklit
+    - Nos dirigimos a checklit Performance
     - En EVC poner `EVC - DATOS ANALITICA E IA`
     - En codigo apliccion poner AW1003001
-    - Dar true en la preguta de pruebas continuas de seguridad y luego etiquetar a Cesar Augusto Ospina Jimienez (esto pued ecambiar en el futuro)
-    - En el campo de analista de seguridad n la transformacion poner a Julio Cesar Perez Calderón
+    - Nos dirigimos a checklit Seguridad
+    - Dar true en la preguta de `¿El EVC/CDE cuenta con Ingeniero de Seguridad de TI - DevSecOps asignado?` y luego etiquetar a Cesar Augusto Ospina Jimienez
+    - En el campo de `Indique el diseñador de ciberseguridad asignado al EVC/CDE` poner a Julio Cesar Perez Calderón
     - Y finalmenete guardamos.
     - Volvemos a entrar al testplan.
     - En `Se está evaluando la necesidad de pruebas de performance modulares o pruebas de performance E2E?` poner `modular NO isieries`

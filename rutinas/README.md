@@ -41,7 +41,8 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
     |Codigo PMO|`<codigo_PMO>`|El primer padre de la HU|EVC00037|
     |Nombre Celula|`<celula_name>`|Historia de usuario|DAIA15 - DRACARYS|
     |Nombre repositorio|`<repository_name>`|En el PR adjunto a la HU|bana-vrie-calendarizacion-fco2|
-    |Nombre del paquete|`<package_name>`|Nombre de la carpeta dentro de `src` en el PR adjunto a la HU|alm_bana_fco2
+    |Nombre del paquete|`<package_name>`|Nombre en el setup.py|alm_bana_fco2
+    |site'package|`<site-package>`|Nombre de la carpeta dentro de `src` en el PR adjunto a la HU|alm_bana_fco2
     |Zona de Resultados|`<results_zone>`|En el config.json de la PR. En los archivos PY de la PR. Preguntar al Usuario.|proceso_bana_vp_riesgos
     |Periodicidad|`<periodicidad>`|Por lo general se encuentra en la HU|Diaria
     |autoInventory|`<auto_inventory>`| true o false si se trata de una calendarizacion o una modificacion respectivamente.
