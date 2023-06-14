@@ -5,6 +5,7 @@
 - La documentacion del proceso de ingestiones puede ser encontrado en la seccion de [ingestiones](../ingestiones/README.md) de la presetente documentacion.
 -	Existe una documentación referente a este proceso en los archivos del equipo **Células LZ** de *Teams* en *`Desarrollo/CDH – BigDataCompany/Bases de datos temporales/`* o en *`test/CDH – BigDataCompany/Bases de datos temporales/`*
 -	Hay una serie de videos donde se da capacitación sobre ingestión de tablas temporales, revisar siempre el mas reciente. Dichos videos están en en los archivos del equipo **Células LZ** de *Teams* en *`General/Gestion Historias Usuario/Ingestiones/`*
+- Hay un archivo con la info de los refinamientos. [DOR](https://bancolombia.sharepoint.com.mcas.ms/:p:/r/teams/CelulasLZ/_layouts/15/Doc.aspx?sourcedoc=%7BABE3BEB1-E297-43BD-A064-954164546B64%7D&file=DOR-DOD%20DAIA13-14-15-16.pptx&wdOrigin=TEAMS-WEB.p2p.bim&action=edit&mobileredirect=true)
 
 ## Checklist
 - Leer la historia de usuario.

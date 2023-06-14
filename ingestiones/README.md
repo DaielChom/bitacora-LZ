@@ -254,9 +254,8 @@ El proceso para generar scripts, la creacion de tablas temporales y otros proces
           Running job: job_1670355110358_0227
 
         En este caso cambiamos la palabra `job` por `application` y con el comando de yarn logs podemos visaluar los logs.
-     
-
-
+    - **Revisar errores:**
+        - Si el error es en **refresh_metadata** o **invalidate_metadata** revisar cuantos datos trajo en el paso de doIngest ya que si no trae ningun dato no se creara la metadata, por ende no se podra hacer un refresh ni un invalidate.     
 
 7. **Automatizacion de certificacion:** Consiste en ejecutar pruebas con el objetivo de verificar que la ingestion se haya llevado de manera correcta.
     - **Crear lista de flujos:** Se debe crear un archivo txt que contenga lo siguiente.

@@ -18,6 +18,7 @@ Se contara con una HU de "Despliegue de infraestructura" la cual es la primera q
           $ git checkout -b feature/HU<hu-id>_<hu-name>
 
     - En caso de que sea un API completamente nueva, copiar el directorio xxx cambiandole el nombre por el de la api que vamos a desplegar
+    - agregar la alarma de cloudwach a la dynamo
     - **USAR GENERADOR DE INFRAESTRUCURA.**
     - modicar los archivos de la infrastructura segun sea necesario.
         - modificar las variables en el azure.yaml
@@ -230,9 +231,10 @@ Debemos contar con una HU de creacion de coordinadores para mbientes intermedios
             - crear carpeta
                 
                   $ mkdir -p `/data01/Cloud/TMP_FILES/<ApiName>`
-            - Ejecutar coordinador 
+            - Ejecutar coordinador o coordinador inverso
                   
                   $ cd /opt/gitDevops/ProductizarLaAnalitica/ProductizarPy3 && nohup python3 coordinatorV2.py /opt/gitDevops/ProductizarLaAnalitica/<ApiName>/API/cfg/<coordinador>.json &
+                  $ cd /opt/gitDevops/ProductizarLaAnalitica/InversoPy3/ && nohup python3 inverse_coordinator.py /opt/gitDevops/ProductizarLaAnalitica/<ApiName>/API/cfg/<coordinador>.json &
             
             - Revisar logs. Debemos revisar los logs del coordinador en la ruta `/opt/gitDevops/ProductizarLaAnalitica/<ApiName>/TMP_FILES/logs`
             - Documentar. Cuando haya finalizado debemos documentar en la HU la ejecucion y buen funcionamiento del coordinador. Debemos tambien adjuntar evidencia de AWS.
@@ -353,7 +355,7 @@ Debemos contar con una HU de creacion de coordinadores para mbientes intermedios
               SOLUCION: Desplegar API <API-name> en ambientes productivos
               BENEFICIO: Generar acceso al API <API-name> para que puedan consumir equipos del banco.
               IMPACTO: Verificado en las pruebas de performance asociadas en el presente release.
-        - **Security E2E:** Lo aprueba el certificador..              
+        - **Security E2E:** Lo aprueba el certificador.              
         - **Create OC:** 
             
             - E2E: En este punto el release ya debe estar excepcionado de las pruebas E2E (punto 1 de la seccion Salida a PRD), si no, el create OC fallara. 
@@ -363,9 +365,12 @@ Debemos contar con una HU de creacion de coordinadores para mbientes intermedios
                 -|-|-
                 Team|<celula>|DAIA15 - DRACARYS
                 Dependencia|<nombre-EVC>|Entorno Otros EVC - EVC Datos Analitica AI Blockchain - Cloudera Data Platform
+                usuario|
+                numero celular|
                 ....
             - Testplan: cerrar los testplan
             - aprobacion: hablar con luis para aprobar el starge.
+        - **Deploy PDN:** Lo hace infra, pero debo asegurarme que la opcion Allow script to access the OAuth token este habilitada en todos los stages de PRD en la tarea del Agent Job.
 
         - **Smoke Test**: debe estar con todas las configuraciones igual que el smoktest de dev, ambos stages deben tambien contar con las mismas variables.
 
@@ -395,6 +400,8 @@ Debemos contar con una HU de creacion de coordinadores para mbientes intermedios
           $ INSERT INTO resultados.Inventario_LZ (package,table_name,semilla,proceso,origen_fuente,data_folder,periodicidad,descripcion,solicita_ingestion,dia_ejecucion,hora_ejecucion,prerrequisito) VALUES ('<paquete>','<table-name-resultados>','<zona-resultados>','<proceso>','Coordinador','<ruta-opt-prd>','<periodicidad>','<descripcion>','<hu-user>','<dia-ejecucion>','<hora-ejecucion>','<prerrequisto>'); 
 
     - Con el usuario verificar los prerrequistos del coordinador ya que se ejecutara en malla.
+    - El repositorio cambiar las variables de nombre y celular
+    - Poner la descripcion del release
     - Mandar certificar. entregarle el release, al certificador.
     - 
 
