@@ -167,11 +167,7 @@ Este tendrá unos valores por defecto que puedes validar mendiante insomina,post
 e.g: 
 ```
 {
-    "query": "query ConsultarEstimadorIngresosAll($idCliente:Int, $limit:Int , $ascendente:Boolean , $lastEvaluatedKey:LastEvaluatedKeyEstimadorIngresos) {estimadorIngresosAll(idCliente:$idCliente, limit:$limit , ascendente:$ascendente , lastEvaluatedKey:$lastEvaluatedKey){totalCount,estimadoringresos{ingestionYear , ingestionMonth , ingestionDay , idCliente , clasificacion , ingFinal , antiguedadLaboralFinal , lugarTrabajoFinal , ingresoSolicitudes , antiguedadLaboralSolicitudes , lugarTrabajoSolicitudes , flagSolicitudes , ingPlanilla , antiguedadLaboralPlanilla , lugarTrabajoPlanilla , activo , migrar}}}",
-    "variables": {
-        "idCliente": 9056626
-    }
-}
+    "query": "query ConsultarEstimadorIngresosAll($idCliente:Int, $limit:Int , $ascendente:Boolean , $lastEvaluatedKey:LastEvaluatedKeyEstimadorIngresos) {estimadorIngresosAll(idCliente:$idCliente, limit:$limit , ascendente:$ascendente , lastEvaluatedKey:$lastEvaluatedKey){totalCount,estimadoringresos{ingestionYear , ingestionMonth , ingestionDay , idCliente , clasificacion , ingFinal , antiguedadLaboralFinal , lugarTrabajoFinal , ingresoSolicitudes , antiguedadLaboralSolicitudes , lugarTrabajoSolicitudes , flagSolicitudes , ingPlanilla , antiguedadLaboralPlanilla , lugarTrabajoPlanilla , activo , migrar}}}","variables": {"idCliente": 9056626}}
 ```
 
 Luego debes de reemplazarlo por el comdín que vas a usar:
