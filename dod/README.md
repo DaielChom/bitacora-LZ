@@ -41,4 +41,4 @@ condiciones de cuanto tiempo dura la aprobacion, etc
 - Si el DoD es aprobado por alguien mas que no sea la PO propia (yamile) en el testplan se deber cambiar el nombre y poner un comentario de que se aprueba con otra PO.
 
 - Ir USD y ver que la OC  (change order) y comprobar que tiene el codigo de la DO. De igual manera la DoD debe tener la OC correcta. Esto sucede cuando el DoD queda mal gestionado
-- no peude durar mas de 24h cerrado sin OC
+- No puede durar mas de 24h cerrado sin OC
