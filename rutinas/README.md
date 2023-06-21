@@ -6,7 +6,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 
 ## Documentación
 
-- [Lineamientos](rutinas\Docs\BuenasPracticas.docx)
+- [Lineamientos](https://github.com/Beowoulfk/bitacora-LZ/blob/8b24b91689a87950f607965d1db3e62e3124429f/rutinas/Docs/BuenasPracticas.docx)
 - Hay una serie de videos donde se da capacitación sobre rutinas virtuales y una serie de documentos sobre rutinas en los archivos del equipo **Células LZ** de *Teams* en *`General/Gestion Historias Usuario/Rutinas/`*
 - Como primera aproximacion a rutinas se aconseja ver los siguientes videos en el orden correspondiente:  
   - [Primer video Rutinas tradicionales](https://bancolombia.sharepoint.com/:v:/t/CelulasLZ/EaBCTTcPKZNOiFgYX7YbSR0ByXAmGy9wIn4NSaMPfS7pbw?e=Rc42LU)
