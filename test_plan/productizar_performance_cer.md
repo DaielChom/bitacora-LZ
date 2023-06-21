@@ -52,7 +52,7 @@
     - En EVC poner `EVC - DATOS ANALITICA E IA`
     - En codigo apliccion poner el que viene al incio del nombre del repositorio. Ejemplo `NU0044001`
     - Dar true en la preguta de pruebas continuas de seguridad y luego etiquetar a Cesar Augusto Ospina Jimienez (esto pued ecambiar en el futuro)
-    - En el campo de analista de seguridad n la transformacion poner a Cristian camilo zuluaga Ramirez
+    - En el campo de analista de seguridad n la transformacion poner a Julio Cesar Perez Calderón
     - Y finalmenete guardamos.
     - Volvemos a entrar al testplan y a checklist.
     - En `Se está evaluando la necesidad de pruebas de performance modulares o pruebas de performance E2E?` poner `modular NO isieries`

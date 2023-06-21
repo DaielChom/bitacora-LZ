@@ -46,13 +46,16 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
     |Codigo PMO|`<codigo_PMO>`|El primer padre de la HU|EVC00037|
     |Nombre Celula|`<celula_name>`|Historia de usuario|DAIA15 - DRACARYS|
     |Nombre repositorio|`<repository_name>`|En el PR adjunto a la HU|bana-vrie-calendarizacion-fco2|
-    |Nombre del paquete|`<package_name>`|Nombre de la carpeta dentro de `src` en el PR adjunto a la HU|alm_bana_fco2
+    |Nombre del paquete|`<package_name>`|Nombre en el setup.py|alm_bana_fco2
+    |site'package|`<site-package>`|Nombre de la carpeta dentro de `src` en el PR adjunto a la HU|alm_bana_fco2
     |Zona de Resultados|`<results_zone>`|En el config.json de la PR. En los archivos PY de la PR. Preguntar al Usuario.|proceso_bana_vp_riesgos
     |Periodicidad|`<periodicidad>`|Por lo general se encuentra en la HU|Diaria
+    |autoInventory|`<auto_inventory>`| true o false si se trata de una calendarizacion o una modificacion respectivamente.
 
     **Nota:** 
     - Como buena practica en los usuarios, el nombre del repositorio y el nombre del paquete, deberian ser iguales solo que el primero separado por `-` y el segundo por `_`. **Esto no afecta en nuestro proceso de Rutinas.**
     - La periodicidad es para rutinas de calendarizacion o modificaciones en la periodicidad. Este dato se usar a la hora de inscribir en malla.
+    - **autoInventory:** Es una variable que debe ser diligenciada en el relese, sirve para realizar el insert en el autoinventario de la LZ, una tabla que contiene todos los procesos que salen a PRD en la LZ. Para las rutinas debe de realizarse en insert cada vez que se despliega por primera vez los archivos en PRD.
 
 3. **Nuevo release:** El objetivo de la rutina es verificar, probar y productizar cambios en alguna libreria de los clientes. Para ello el equipo Landing Zone cuenta con un repositorio en donde estan los scripts y entornos virtuales con los cuales realizar estas tareas. Para llevar seguimiento a todo este proceso de la rutina debe crearse un release con el cual estaremos trabajando a partir de este momento. Pare ello se debe:
     - **Aprobar PR:** Aprobar la `pull-request` adjuntada por el usuario en la `HU`, luego de haber hecho las revisiones pertienentes. La idea de estas revisiones es evitar que el usuario tenga que crear un nuevo release luego de habe aprobado alguno con malas practicas.
@@ -80,6 +83,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
         |repositoryName|`<repository_name>`|
         |packageName|`<package_name>`|
         |zona|`<results_zone>`|
+        |autoInventory|`<auto_inventory>`|
 
         Luego de modificar las variables, procedemos a guardar. Estas modificaciones de variables se hacen para un correcto procesamiento en el stage de CreateOC del release.
 
@@ -157,54 +161,21 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
         la idea de ejecutar la rutina es encontrar erores o problemas que se denominana hallazgos, los cuales se reportan al usuario para que los corriga.
         la idea no es botar la pelota con el usuario con cada error que se encuentra, uno mismo podria vcorregir el error para verificar nuevos hallazgos y asi entregar una lista de hallazgos a los usuarios. Se notifica a los usuarios que hagan los cambios ya que los cambios en lasrutinas deben ser por parte de los mismos usuarios, en landingzone no debemos cgenerar ningun tipo de cambio en la rutina que vaya a produccion.
 
-        Nuestra tarea es corroborar al codigo no correguir. Si hay hallazgos y no da tiempo de vovler a probar. la HU no se calendariza, es decir no va a producicon, es decir no se inscribe en malla
+        Nuestra tarea es corroborar al codigo no correguir. Si hay hallazgos y no da tiempo de vovler a probar. la HU no se calendariza, es decir no va a producicon, es decir no se inscribe en mal
+        - Fallos: Si falla por algun import puede que el usuario requiera conocer el [repositorio guia](https://dev.azure.com.mcas.ms/GrupoBancolombia/Vicepresidencia%20de%20Innovaci%C3%B3n%20y%20Transformaci%C3%B3n%20Digital/_git/vitd-ejemplo-orquestador2)
 
-        
 
-    - **Reservar paquete Hue**
-    si la rutina es una modificacion no hay que reservar paquete ni llevar al autoinventory ni generar la documentacion. Sin embargo es buna practica verifica que la rutina se esta ejecutando correctamente en prd a traves de control M. De lo contrario si se trata de una calendarizacion hay que registrar la nueva rutina. Para ello lo que se hara es registrar la rutina en el inventario de la LZ y crear documentacion.
+    - **Resume:** Cuando nos aseguramos de que la rutina no tiene hallazgos reejecutamos el stage deploy dev y luego le damos resume al estado Dev validation. Esto sucede asi dado que modificacmos el config.json lo reescribimos a su estado original dandole nuevamnete deploy al primer estado, esto como precaucion de que el config no vaya con la configuracion equivocada a PRD. Luego podemos dar deploy al estado dev validation dado que validamos usando el validador y ejehcutamos la rutina.
 
-        - **Determinar nombre de proceso**: Buscar los ultimos 10 para ver cual es el ultimo para crear uno nuevo. Ejecutamos la siguiente consulta en HUE-DEV.
+6. **Release: CER Reception** Entregamos a certifdicacion. certificacion nos devuelve la rutina en VSTS Pre-validation. Enviar correo promove objetos. En caso de que se haya trabajado con una HU de revision, no olvidar que se sale a prd con la HU de calendarizacion.
+7. **Release: VSTS Pre valdiation:** Simeplemente debemos desplegar. ellos haran varios checqueos.
+8. **Release: Create OC** hablamos encargado de la OC. para indicarle que ya tenemos una rutina hia. le pasamos el release. el certificador cierra el testplan.  Una vez este aprobado debemos veritficar el DoD, el DoD debe tener la Oc asignado de manera correcta y entrar a uno de los estados del release y ver que si se relaciono con el DoD correcto. Hasta la fecha se debe hablar con Luis
+9. **Release: DeployPDN** el certificador manda un correo y en infra ejecutan el despliegue en prd.
+10. **Copy of Execute Auto Inventory Routine Test:** Revisar el word [Uso de Autoinventario de rutinas](https://bancolombia-my.sharepoint.com/:w:/r/personal/andorreg_bancolombia_com_co1/Documents/Archivos%20de%20chat%20de%20Microsoft%20Teams/Uso%20de%20Autoinventario%20de%20rutinas.docx?d=wa48f70f231264e2b8094c9ad0a3596f2&csf=1&web=1&e=QCr4zq) para mas detalle
 
-              $ select cast(REGEXP_REPLACE(package,'[^0-9]+', "") as int) as consecutivo, package, proceso, count(*) from resultados.inventario_lz group by 1,2,3 order by 1 DESC limit 10;
+  - **Determinar nombre del proceso:** Entrar a DeployUCD para determinar el nombre del proceso con el cual documentaremos la rutina y quedara registrada en PRD y en malla.
 
-            Tambien se podria ejecutar desde el servidor de DEV usando el comando
-
-              $ impala-shell -i $STR_CNX_IMPALA -k -q "<query>" --ssl
-
-            Verificamos cual es el ultimo numero consecutivo y tomamos el siguiente para nuestro proceso. Debemos tener muy ecuenta el nombre del paquete sqp y el nombre del proceso. son diferentes.
-            
-              paquete sqp => SQOOPDI1937 ->  SQOOP + periodicidad + ultimo consecutivo + 1
-              proceso sqp => SQPDI1937RTNCSD -> SQP + periodicidad + ultimo consecutivo + 1 + RTN + Aplicativo
-
-            Podemos ver rutinas de ejemplo con la siguiente query.
-              
-              $ SELECT package,table_name,semilla,proceso,origen_fuente,data_folder,periodicidad,descripcion,solicita_ingestion,dia_ejecucion,hora_ejecucion,prerrequisito FROM resultados.inventario_lz WHERE origen_fuente='Rutina' LIMIT 10
-        
-        - **Separar paquete:** Una vez tengamos el nombre del paquete y proceso definidos vamos aregistrar la rutina en el autonventory. la idea es ejecutar la sigueinte consuslta reemplazando los campos requerdos.
-
-              $ INSERT INTO resultados.Inventario_LZ (package,table_name,semilla,proceso,origen_fuente,data_folder,periodicidad,descripcion,solicita_ingestion,dia_ejecucion,hora_ejecucion,prerrequisito,short_name,workflow) VALUES ('<paquete>','<nombre-rutina>','<grupo-USD>','<proceso>','Rutina','<directorio-rutina>','<periodicidad>','<descripcion>','<usuario-hu>','<dia-ejecucion>','<hora-ejecucion>','<prerrequisto>','<aplicativo>','<comando-ejecucion>');
-
-            Ejemplo parametrios:
-            |parametro|ejemplo|
-            |-|-|
-            |`<paquete>`|SQPSE2278|
-            |`<nombre-rutina>`|Rutina de Contactabilidad|
-            |`<grupo-USD>`|Jurídico Analítico Personas Enriquecimiento y Monitoreo.|
-            |`<proceso>`|SQPSE2278RTNCPN|
-            |`<directorio-rutina>`|/avirtual/resultados_vppc_dir_estrat_clte_pers/contactabilidad_pn/|
-            |`<periodicidad>`|Semanal|
-            |`<descripcion>`|Calendarizar el proceso de Contactabilidad para su correcto cargue semanal, en la LZ en la zona de resultados resultados_vppc_dir_estrat_clte_pers.|
-            |`<usuario-hu>`|Santiago Restrepo Yepes|
-            |`<dia-ejecucion>`|Martes|
-            |`<hora-ejecucion>`|1:00pm|
-            |`<prerrequisto>`|N/A|
-            |`<aplicativo>`|CPN|
-            |`<comando-ejecucion>`|python3 /home/svchad02/scripts/pyEnvs/runPyEnv.py --resultDir resultados_vppc_dir_estrat_clte_pers --pyEnvPkg contactabilidad_pn --pySitePck contactabilidad_pn|
-
-            podemos verificar el registro volviendo aconsultar los ultimos 10 procesos.
-                    
-    - **Documentacion**
+  - **Documentacion**
     la rutina debe estar en http://wikiti/wikiti/index.php/CapacidadesAnaliticas-DT
     wikiTI y matriz de riesgos.
     Si la rutina pasa las pruebas -> hacer la documentacion wikiti y sjarepoint.
@@ -214,25 +185,10 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
     Tener en cuenta que en la wiki se debe cambiar el grupo usd.
 
 
-    - **Resume:** Cuando nos aseguramos de que la rutina no tiene hallazgos reejecutamos el stage deploy dev y luego le damos resume al estado Dev validation. Esto sucede asi dado que modificacmos el config.json lo reescribimos a su estado original dandole nuevamnete deploy al primer estado, esto como precaucion de que el config no vaya con la configuracion equivocada a PRD. Luego podemos dar deploy al estado dev validation dado que validamos usando el validador y ejehcutamos la rutina.
+11. **Release:user Valdiation.**
 
-6. **Release: CER Reception** Entregamos a certifdicacion. certificacion nos devuelve la rutina en VSTS Pre-validation. Enviar correo promove objetos. En caso de que se haya trabajado con una HU de revision, no olvidar que se sale a prd con la HU de calendarizacion.
-7. **Release: VSTS Pre valdiation:** Simeplemente debemos desplegar. ellos haran varios checqueos.
-8. **Release: Create OC** hablamos encargado de la OC. para indicarle que ya tenemos una rutina hia. le pasamos el release. el certificador cierra el testplan.  Una vez este aprobado debemos veritficar el DoD, el DoD debe tener la Oc asignado de manera correcta y entrar a uno de los estados del release y ver que si se relaciono con el DoD correcto. Hasta la fecha se debe hablar con Luis
-9. **Release: DeployPDN** el certificador manda un correo y en infra ejecutan el despliegue en prd.
-10. **Release:user Valdiation.**
-    - **Inventario LZ:** Se debe enviar un correo a infra para agregar la rutina al inventario en PRD.
-
-      Solicito su apoyo ejecutando los siguientes comandos.
-
-          Buenas tardes, solicito su apoyo ejecutando el siguiente comando.
-
-          Usuario: svchad02
-          Ambiente: PRD 
-          Servidor: SBMDEBLZe001
-
-          impala-shell -i $OOZIE_STR_CNX_IMPALA -k -q "<insert-query>" --ssl
-
+    - **Docuemtnar HU:** Poner el nombre del proceso
+    
     - **Prueba controlada:** En el asistente en prd ejecutamos el comando en servicios, en ejecutar programa.
     comando: xxxxx
       
@@ -250,6 +206,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
               $ ps -fea | grep "<zona_resultados>"
 
         **Nota:** Si falla y ya estaba calendarizada hay que crear una Oc para cancelar la ejecucion.
+
 
     
     - **Calendarizar** si la prueba es exitosa insribir en malla. en el excel. 
