@@ -50,6 +50,11 @@
     - Modificar area e iteration. Agregando la celula y sprint correspondientes a la HU que se esta trabajando
     - Relacionar la HU como item existente. En `link type` poner `relate`, en `work item` el numero de la `HU` y dar OK.
 	- Asignarnos el test plan.
+
+-**Plan Pruebas Perfomance:**
+	- EN codigo de aplicación y Nombre del Aplicativo/Solución se obtienen desde este link:
+	[Inventario MAC](https://bancolombia.sharepoint.com.mcas.ms/:x:/r/sites/co-tst/_layouts/15/Doc.aspx?sourcedoc=%7BA3EFF6A7-E8AC-4726-8DEA-7374A65B7A82%7D&file=Inventario%20MAC%20-%20Resumen.xlsb&action=default&mobileredirect=true&ovuser=b5e244bd-c492-495b-8b10-61bfd453e423%2Cfapineda%40bancolombia.com.co&SafelinksUrl=https%3A%2F%2Fbancolombia.sharepoint.com%2F%3Ax%3A%2Fr%2Fsites%2Fco-tst%2F_layouts%2F15%2FDoc.aspx&cid=c4934860-48d9-4231-9a0c-184792971c30&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIxNDE1LzIzMDYwNDAxMTM4IiwiSGFzRmVkZXJhdGVkVXNlciI6ZmFsc2V9)
+	
 - **Checklist:**
     - Nos dirigimos a checklit
     - En EVC poner `EVC - DATOS ANALITICA E IA`
@@ -76,7 +81,7 @@
             |se ejecuta en malla|No|
             |proceso de la lz|Si|
                 
-        - Bajamos a RNF batch y verificamos los datos que acabamos de ingresar. ~~Debemos asegurarnos de que Recomienda pruebas este en NO.~~  Va salir que neecesitamos pruebas E2E, sin embargo estamos libre de eso y debemos adjuntar ciertos archivos en el testplan.
+        - Bajamos a RNF batch y verificamos los datos que acabamos de ingresar. Debemos asegurarnos de que Recomienda pruebas este en NO.  Va salir que neecesitamos pruebas E2E, sin embargo estamos libre de eso y debemos adjuntar ciertos archivos en el testplan.
         - Luego damos en evaluar checklist y OK
         Despues de haber dado OK no podemos hgacer cambios, si lo requerimos, debemos mandar a borrar el testplan. 
         verificar que diga que La prueba Modular está a cargo de la célula de trabajo
