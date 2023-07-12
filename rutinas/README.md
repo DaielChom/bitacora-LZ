@@ -130,7 +130,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
       - opcion2: Existe un script que verifica buenas practicas de `SQL` y Python en la rutina.        
         
             $ cd /home/<user_name>/AW1003001_BigDataCompany/scripts/routineValidator
-            $ python routineValidator.py -p "configs/routineValidator.properties" -r "/avirtual/<results_zone>/<repository_name o paquete>/venv/lib/python3.5/site-packages/<site-package-name>/" -n <package_name>
+            $ python3 routineValidator.py -p "configs/routineValidator.properties" -r "/avirtual/<results_zone>/<repository_name o paquete>/venv/lib/python3.5/site-packages/<site-package-name>/" -n <package_name>
 
         El -p es el archivo donde estan las propiedades que va a validar. La ejeccion del validador puede dar un error de que el archivo de propiedades no existe o esta desactualizado para ello ejecutamos 
 
