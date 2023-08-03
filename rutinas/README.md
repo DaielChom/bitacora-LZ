@@ -7,6 +7,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 ## Documentación
 
 - [Lineamientos](https://github.com/Beowoulfk/bitacora-LZ/blob/8b24b91689a87950f607965d1db3e62e3124429f/rutinas/Docs/BuenasPracticas.docx)
+- [lineamientos2.0](https://github.com/Beowoulfk/bitacora-LZ/blob/master/rutinas/Docs/Definici%C3%B3n%20Estandarizaci%C3%B3n%20Logs%20para%20Rutinas%20Anal%C3%ADticas%202.0.docx)
 - Hay una serie de videos donde se da capacitación sobre rutinas virtuales y una serie de documentos sobre rutinas en los archivos del equipo **Células LZ** de *Teams* en *`General/Gestion Historias Usuario/Rutinas/`*
 - Como primera aproximacion a rutinas se aconseja ver los siguientes videos en el orden correspondiente:  
   - [Primer video Rutinas tradicionales](https://bancolombia.sharepoint.com/:v:/t/CelulasLZ/EaBCTTcPKZNOiFgYX7YbSR0ByXAmGy9wIn4NSaMPfS7pbw?e=Rc42LU)
@@ -129,7 +130,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
       - opcion2: Existe un script que verifica buenas practicas de `SQL` y Python en la rutina.        
         
             $ cd /home/<user_name>/AW1003001_BigDataCompany/scripts/routineValidator
-            $ python routineValidator.py -p "configs/routineValidator.properties" -r "/avirtual/<results_zone>/<repository_name o paquete>/venv/lib/python3.5/site-packages/<site-package-name>/" -n <package_name>
+            $ python3 routineValidator.py -p "configs/routineValidator.properties" -r "/avirtual/<results_zone>/<repository_name o paquete>/venv/lib/python3.5/site-packages/<site-package-name>/" -n <package_name>
 
         El -p es el archivo donde estan las propiedades que va a validar. La ejeccion del validador puede dar un error de que el archivo de propiedades no existe o esta desactualizado para ello ejecutamos 
 

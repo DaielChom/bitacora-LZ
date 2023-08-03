@@ -5,3 +5,7 @@ En los procesos de la LZ se realizan certificiaciones para 3 procesos. Ingestion
 - certificacion [ingestiones](./ingestiones.md)
 - certificacion [rutinas](./rutinas.md)
 - certificacion [productizar](./productizar.md)
+
+De manera adicioonal se incluye el siguiente link para que haga uso de una plantilla de autocompletado con el fin de agilzar tu proceso de certificación
+ [Datos HU AUTOCOMPLETADO.xlsx](https://github.com/Beowoulfk/bitacora-LZ/files/11952062/Datos.HU.AUTOCOMPLETADO.xlsx) Diseñado por una compañera de nuestro equipo
+
