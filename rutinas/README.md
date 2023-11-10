@@ -1,6 +1,9 @@
-# Rutinas virtuales
+# NOVEDAD ⚠️ : Ahora se maneja en python 3.9 la ejecución del runpyenvs, por lo que cual la rutina debe de estar en esta versión, validar setup.cfg
+
+
+# Rutinas virtuales 
 - **state:** Building
-- **last_update:** 2022-06-07
+- **last_update:** 10/11/2023
 
 Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) del repositorio principal de banco (artifact). Para estas modificaciones se nos entrega un pull-request donde se evidencian los cambios requeridos, el equipo de **Landing Zone**  se encarga de revisar y aprovar dichos cambios. En otras palabras es codigo de usuarios que se ejecuta en nuestros servidores. Esta revision y aprovacion se realiza usando una serie de script validadores y pruebas controladas utilizando un repositorio propio de la LZ. Existen dos tipos de HU para rutinas, Modificaciones o nuevas rutinas. 
 
