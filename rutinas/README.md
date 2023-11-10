@@ -88,7 +88,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 
         Luego de modificar las variables, procedemos a guardar. Estas modificaciones de variables se hacen para un correcto procesamiento en el stage de CreateOC del release.
 
-    - Aregar descripcion en el artifact
+    - Aregar descripcion en el artifact (descripción de release)
 
             TITULO: <HU-fullname>
             NECESIDAD: HU<huid>: <HU description>.
@@ -117,7 +117,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 
         Finalmente vamos a la carpeta de la rutina instalada y la comparamos con la rutina en la `PR`.
 
-          $ cd venv/lib/python3.5/site-packages/<site-package-name>/
+          $ cd venv/lib/python3.9/site-packages/<site-package-name>/
 
         **Nota:** El nombre del paquete (`<package_name>`) y el nombre del sitepackage (`<site-package-name>`) son muy similares, pero pueden llegar a tener diferencias. Hay que tomar nota de ambos, ya que mas adelante se hara uso de ellos.    
 
@@ -148,7 +148,9 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 
     - **Ejecutar rutina:** El siguiente paso consiste en ejecutar la rutina y verificar que no haya errores en python o en la ejecucion del codigo. Para ello vamos a usar un script el cual se encarga de realizar dicha ejecucion.
 
-          $ python3 /home/<user_name>/AW1003001_BigDataCompany/scripts/pyEnvs/runPyEnv.py --resultDir <results_zone> --pyEnvPkg <package_name> --pySitePck <site-package-name>
+  Actualización : AL dia de hoy todas las rutinas de la LZ se deben de recibir bajo python 3.9 ya no se adminten en 3.5
+
+          $ python3.9 /home/<user_name>/AW1003001_BigDataCompany/scripts/pyEnvs/runPyEnv.py --resultDir <results_zone> --pyEnvPkg <package_name> --pySitePck <site-package-name>
 
         La rutina puede vallar y cada error debes informarle al usuario para que haga los respectivos cambios. El equipo no es dueño de la libreria orquestador ni de ninguna de las usadas en la rutina, asi que no es nuestro deber ir a profundidad de los errores que se generen para darle explicaciones al usuario, ellos tiene documentacion de cada una de las librerias que usan.
         
@@ -194,7 +196,7 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
     comando: xxxxx
       
           $ cd /home/svchad02/scripts/pyEnvs
-          $ nohup python3 /home/<user_name>/AW1003001_BigDataCompany/scripts/pyEnvs/runPyEnv.py --resultDir <results_zone> --pyEnvPkg <package_name> --pySitePck <site-package-name> &
+          $ nohup python3.9 /home/svchad02/scripts/pyEnvs/runPyEnv.py --resultDir <results_zone> --pyEnvPkg <package_name> --pySitePck <site-package-name> &
       
         Puede que no finalice ok. asegurarnos de que el correo que llega el orquestador haya finalizado si no, hablar con el usuario. Por posible bug es mejor cerrar la pestaña del asistente cuando se de al boton ejecutar. Para corroborar que todo se esta ejecutando podemos usar los siguientes comandos.
 
@@ -221,11 +223,3 @@ Consiste en el proceso de crear o modificar alguna libreria o codigo (rutina) de
 11. **Cerrar HU**
     ### como cierro la HU?
     - Verificar el archivo Documetnacion por tipoligia de Hu - cierra en la carpeta de gestion de historias de usuario donde esta la info de que cosas se deben agregar en le cierre de la HU
-
-- 
-# TODO
-- Validador de rutinas valida solo sql o sql y python.
-- Si es solo modificacion, que tanto cambia el proceso? a que si es una nueva?
-- Que tanto cambia el desarollo entre una rutina de modificacion y una nueva?
-- en el estado de DeployDEv, no entiendo por que hacemos el proceso manual, luego el proceso DevOs no hace todo eso de ejecutar el validador. porque solo crea el ambiente virtual?
-- indicar bien lo de los estados, que se cancela el segundo y que si es revision o modificacion o calendarizaxcion se abandona o se continua
