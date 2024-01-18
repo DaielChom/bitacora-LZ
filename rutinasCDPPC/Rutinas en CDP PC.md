@@ -50,7 +50,7 @@ Realizar un cambio en el config.json de las rutinas como se muestra a continuaci
 
 A continuación, se presenta un modelo operativo en BIG-Picture:
 
-![RTCDP.png](RTC)
+![RTCDP.png](rutinasCDPPC/RTCDP.png)
 
 A continuación, se adjunta un paso a paso para desplegar una rutina en el pipeline de nube: 
 
