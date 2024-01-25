@@ -13,7 +13,7 @@ Realizar un cambio en el config.json de las rutinas como se muestra a continuaci
       
         "global" : {
                 "dsn" : "Impala-cdp-kudu",
-                "cdp_endpoint" : ""https://bancolombia-de-prd01-manager1.bco-cdp.i5u2-f1yr.cloudera.site/bancolombia-de-prd01/cdp-proxy-api",
+                "cdp_endpoint" : "https://bancolombia-de-prd01-manager1.bco-cdp.i5u2-f1yr.cloudera.site/bancolombia-de-prd01/cdp-proxy-api",
                 "username" : "srv_svccdp03"
     }
     
