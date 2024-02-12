@@ -1,5 +1,9 @@
 # NOVEDAD ⚠️ : Ahora se maneja en python 3.9 la ejecución del runpyenvs, por lo que cual la rutina debe de estar en esta versión, validar setup.cfg
+# NOVEDAD ✔️ :
 
+Ahora puedes revisar este cheatsheet donde se condensa la info
+
+![Notas Rutinas Ambientes Virtuales](https://github.com/Beowoulfk/bitacora-LZ/assets/83320975/0d215dec-13d5-4de8-a95b-cbb311bd1f8e)
 
 # Rutinas virtuales 
 - **state:** Building
