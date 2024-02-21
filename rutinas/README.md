@@ -1,4 +1,8 @@
 # NOVEDAD ⚠️ : Ahora se maneja en python 3.9 la ejecución del runpyenvs, por lo que cual la rutina debe de estar en esta versión, validar setup.cfg
+
+# NOVEDAD ✔️ :
+
+Se debe de garantizar que las rutas se encuentren en el setup.cfg , si se encuentran en el manifest.in y en el setup.cfg 
 # NOVEDAD ✔️ :
 
 Ahora puedes revisar este cheatsheet donde se condensa la info
